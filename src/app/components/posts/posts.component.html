@@ -1,0 +1,41 @@
+<ul class="collection col s12 m12 l10" *ngFor="let post of posts">
+  <li class="collection-item avatar">
+    <img src="https://via.placeholder.com/150" alt="" class="circle" />
+    <span class="title">{{ post.username }}</span>
+    <p class="time">
+      {{ TimeFromNow(post.created) }} <br />
+      <!-- Country -->
+    </p>
+  </li>
+  <div class="row">
+    <div class="col s12">
+      <div class="card">
+        <!-- <div class="card-image">
+          <img
+            class="postImage"
+            src="data:image/jpeg;base64,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"
+          />
+        </div> -->
+        <div class="card-content">
+          <p>{{ post.post }}</p>
+        </div>
+        <div class="card-action">
+          <i
+            (click)="LikePost(post)"
+            [ngClass]="!CheckInLikesArray(post.likes, user.username) ? 'notLiked' : 'liked'"
+            class="material-icons"
+            >thumb_up</i
+          >
+          <span class="iconSpan">{{ post.totalLikes }}</span>
+          <i
+            class="material-icons"
+            [ngClass]="!CheckInLikesArray(post.comments, user.username) ? 'notLiked' : 'liked'"
+            (click)="OpenCommentBox(post)"
+            >chat</i
+          >
+          <span class="iconSpan">{{ post.comments.length }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</ul>
